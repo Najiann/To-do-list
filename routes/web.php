@@ -22,6 +22,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/todo', [TodoController::class, 'store']);
     Route::patch('/todo/{id}/done', [TodoController::class, 'markAsDone']);
     Route::delete('/todo/{id}', [TodoController::class, 'destroy']);
+    Route::post('/todo/{id}/evaluate', [TodoController::class, 'evaluate'])->name('todo.evaluate');
 });
 
 require __DIR__.'/auth.php';
